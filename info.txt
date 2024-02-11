@@ -1,0 +1,27 @@
+endpoints: 
+get all users: http://127.0.0.1:8000/api/users/
+
+get one user by id: http://127.0.0.1:8000/api/users/2/
+
+post a new user: curl -X POST http://127.0.0.1:8000/api/users/new/ \
+-H "Content-Type: application/json" \
+-d '{
+   "name": "HarryPOTTER",
+   "email": "meow@example.com",
+   "role": "user",
+   "is_admin": false
+}'
+
+
+put use: curl -X PUT -H "Content-Type: application/json" -d '{
+    "name": "H Potter",      
+    "email": "tp@example.com",
+    "role": "Admin",       
+    "is_admin": true
+}' http://127.0.0.1:8000/api/users/6/update/
+
+patch a user: curl -X PATCH -H "Content-Type: application/json" -d '{
+    "name": "HARRY P"      
+}' http://127.0.0.1:8000/api/users/6/patch/ 
+
+delete user: curl -X DELETE http://127.0.0.1:8000/api/users/2/delete/
